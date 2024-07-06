@@ -66,6 +66,24 @@ class RequestPage extends StatelessWidget {
                             ),
                           ),
                           SizedBox(width: 10),
+                          ElevatedButton.icon(
+                            onPressed: () {
+                              requestProvider.updateRequestStatus(
+                                  request, 'rejected');
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text('Request rejected'),
+                                  duration: Duration(seconds: 3),
+                                ),
+                              );
+                            },
+                            icon: Icon(Icons.close, color: Colors.white),
+                            label: Text('Reject'),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.red,
+                              padding: EdgeInsets.symmetric(horizontal: 20),
+                            ),
+                          ),
                     ],
                   ),
                 ),
