@@ -34,7 +34,23 @@ class BorrowRequestsPage extends StatelessWidget {
                   Text('Duration: ${request.duration.inDays} days'),
                 ],
               ),
-
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.check, color: Colors.green),
+                    onPressed: () {
+                      borrowProvider.acceptRequest(index);
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.close, color: Colors.red),
+                    onPressed: () {
+                      borrowProvider.rejectRequest(index);
+                    },
+                  ),
+                ],
+              ),
             ),
           );
         },
