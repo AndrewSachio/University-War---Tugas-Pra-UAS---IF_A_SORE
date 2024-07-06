@@ -18,3 +18,25 @@ class BorrowRequest {
   Duration get duration => endDate.difference(startDate);
 }
 
+class BorrowProvider with ChangeNotifier {
+  List<BorrowRequest> _borrowRequests = [];
+
+  List<BorrowRequest> get borrowRequests => _borrowRequests;
+
+  void addBorrowRequest(BorrowRequest request) {
+    _borrowRequests.add(request);
+    notifyListeners();
+  }
+
+  void acceptRequest(int index) {
+    _borrowRequests[index].isAccepted = true;
+    notifyListeners();
+  }
+
+  void rejectRequest(int index) {
+    _borrowRequests.removeAt(index);
+    notifyListeners();
+  }
+}
+
+
