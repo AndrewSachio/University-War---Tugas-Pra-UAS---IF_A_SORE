@@ -25,7 +25,26 @@ class RequestPage extends StatelessWidget {
                   padding: EdgeInsets.all(16.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [],
+                    children: [
+                      Text(
+                        'Item Name: ${request.itemName}',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: 8),
+                      Text('Quantity Needed: ${request.quantity}'),
+                      SizedBox(height: 8),
+                      Text('Reason: ${request.reason}'),
+                      SizedBox(height: 8),
+                      if (request.isDepartmentRequest) ...[
+                        Text('Department Name: ${request.departmentName}'),
+                        SizedBox(height: 8),
+                        Text(
+                            'Responsible Person: ${request.responsiblePerson}'),
+                      ],
+                      SizedBox(height: 8),
+                      Text('Requested by: ${request.username}'),
+                      SizedBox(height: 16),
+                    ],
                   ),
                 ),
               )
