@@ -4,6 +4,7 @@ import 'package:kopicow_application/Settings_Page.dart';
 import 'package:kopicow_application/admin/Assets_Page.dart';
 import 'package:kopicow_application/admin/Category_Page.dart';
 import 'package:kopicow_application/admin/Distributor_Page.dart';
+import 'package:kopicow_application/admin/Borrow_Page.dart';
 import 'package:kopicow_application/admin/Location_Page.dart';
 
 class HomeAdmin extends StatefulWidget {
@@ -32,7 +33,7 @@ class _HomeAdminState extends State<HomeAdmin> {
       'page': DistributorPage()
     },
     {'icon': Icons.web_asset_rounded, 'label': 'Assets', 'page': AssetsPage()},
-    {'icon': Icons.check_box, 'label': 'Persetujuan', 'page': LocationPage()},
+    {'icon': Icons.check_box, 'label': 'Approval', 'page': BorrowPage()},
     {'icon': Icons.request_page, 'label': 'Request', 'page': DistributorPage()},
   ];
 
