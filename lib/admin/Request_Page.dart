@@ -44,6 +44,28 @@ class RequestPage extends StatelessWidget {
                       SizedBox(height: 8),
                       Text('Requested by: ${request.username}'),
                       SizedBox(height: 16),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          ElevatedButton.icon(
+                            onPressed: () {
+                              requestProvider.updateRequestStatus(
+                                  request, 'accepted');
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text('Request accepted'),
+                                  duration: Duration(seconds: 3),
+                                ),
+                              );
+                            },
+                            icon: Icon(Icons.check, color: Colors.white),
+                            label: Text('Accept'),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.green,
+                              padding: EdgeInsets.symmetric(horizontal: 20),
+                            ),
+                          ),
+                          SizedBox(width: 10),
                     ],
                   ),
                 ),
