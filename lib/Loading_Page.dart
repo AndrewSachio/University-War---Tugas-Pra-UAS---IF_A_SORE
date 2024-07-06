@@ -11,7 +11,8 @@ class LoadingPage extends StatefulWidget {
 
 class _LoadingPageState extends State<LoadingPage> {
   bool status = true;
-
+  // jika status true maka akan dialihkan ke landing page
+  // jika status false maka akan dialihkan ke mantance page
   @override
   void initState() {
     super.initState();
